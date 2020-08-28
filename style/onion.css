@@ -1,0 +1,220 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+
+.spacer {
+    flex: 1;
+  }
+
+	.onion.row{
+		padding-top: 7%;
+	}
+
+  .onionToolbar img {
+    margin: 0 16px;
+  }
+
+  .onionContent {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #col-1{
+    left: 5%;
+  }
+
+  #col-2{
+    right: 5%;
+  }
+
+  .onionCard.card{
+    background-color: white;
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    border-top: 6px solid #373E40;
+    box-shadow: 4px 4px 6px 0 #77878B;
+    transition: all .2s ease-in-out;
+  }
+
+  .onionCard.card:hover{
+    transform: scale(1.1);
+    border-top: 6px solid #ff3535;
+  }
+
+  .onionCard.card:hover .notstamp{
+      display:block!important;
+      z-index: 100;
+      transform: rotate(-30deg);
+  }
+
+  #scoreMsg{
+    padding-right: 20px;
+  }
+
+  #onionTitle{
+    padding-left: 20px;
+  }
+
+@media (min-width : 500px) {
+    #mobileDiv{
+      display: none;
+    }
+
+    #desktopDiv{
+      display: block;
+    }
+
+    .imgheader{
+      height: 25%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .onionToolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #006B3A;
+      color: white;
+      font-weight: 600;
+    }
+
+    #leftTitle{
+      top: 130px;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      line-height: 1;
+      font-weight: bold;
+      font-family: ElizabethSerif, Georgia, serif;
+      margin: 5px;
+    }
+
+    #rightTitle{
+      top: 130px;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      line-height: 1;
+      font-weight: bold;
+      font-family: ElizabethSerif, Georgia, serif;
+      margin: 5px;
+    }
+
+    .notstamp{
+      position: absolute;
+      left:10%;
+      top:40%;
+    }
+}
+
+@media (max-width : 500px) {
+    #mobileDiv{
+      display: block;
+    }
+
+    #desktopDiv{
+      display: none;
+    }
+
+    .imgheader{
+      width: 100vw;
+      position: absolute;
+      top: 5%;
+      left: 0;
+      z-index: -5;
+    }
+
+    .bottomHeader{
+      width: 100vw;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    .onionToolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background-color: #006B3A;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    #leftTitle{
+      top: 20%;
+      position: absolute;
+      left: 0;
+      height: 25%;
+      line-height: 1;
+      font-weight: bold;
+      font-family: ElizabethSerif, Georgia, serif;
+      margin: 5px;
+    }
+
+    #rightTitle{
+      top: 65%;
+      position: absolute;
+      left: 0;
+      height: 25%;
+      line-height: 1;
+      font-weight: bold;
+      font-family: ElizabethSerif, Georgia, serif;
+      margin: 5px;
+    }
+
+    #next{
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      box-sizing: border-box;
+    }
+
+    .notstamp{
+      z-index: 100;
+      transform: rotate(-30deg);
+    }
+
+    img.left.notstamp{
+      position: absolute;
+      top: 25%;
+      width: 75%;
+      left: 10%;
+    }
+
+    img.right.notstamp{
+      position: absolute;
+      top: 70%;
+      width: 75%;
+      left: 10%;
+    }
+
+    #mobileScore{
+      width: 40%;
+      padding-right: 5%;
+    }
+}

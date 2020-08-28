@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-app="onionApp">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Onions!</title>
+	  <script src="scripts/onion.js"></script>
+	  <link rel="stylesheet" href="./style/onion.css">
+	  <script>document.write('<base href="' + document.location + '" />');</script>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</head>
+	<body ng-controller="onionController">
+	  	<div id="desktopDiv">
+	  		<div class="onionToolbar" role="banner">
+	    		<span id="onionTitle">Can You Smell a #notTheOnion?</span>
+	    		<div class="spacer"></div>
+	    		<span id="scoreMsg">SCORE: {{ scoreCount }} / {{ total }}</span>
+	  		</div>
+	  		<div class="onion content" role="main">
+	    		<div class="onion row" ng-init="this.initBase()">
+	      			<div id="col-1" class="onionCard card" ng-click="this.selectNot('L')">
+	        			<img class="imgheader" src="/assets/template.jpg"/>
+	        			<img class="notstamp" style="display:none;" src="/assets/not_stamp.png"/>
+	        			<span id="leftTitle" style="font-size: 4vw">{{ leftTitle }}</span>
+	      			</div>
+	      			<div id="col-2" class="onionCard card" ng-click="this.selectNot('R')">
+	        			<img class="imgheader" src="/assets/template.jpg"/>
+	        			<img class="notstamp" style="display:none" src="/assets/not_stamp.png"/>
+	        			<span id="rightTitle" style="font-size: 4vw">{{ rightTitle }}</span>
+	      			</div>
+	    		</div>
+	  		</div>
+		</div>
+		<div id="mobileDiv">
+	  		<div class="mobile onionToolbar" role="banner">
+	    		<span id="onionTitle">How many layers in #notTheOnion???</span>
+	    		<div class="mobile spacer"></div>
+	    		<span id="mobileScore">SCORE: {{ scoreCount }} / {{ total }}</span>
+	  		</div>
+	  		<div class="mobile content" role="main" ng-init="this.initMobile()">
+	    		<div class="mobile onion row" ng-click="this.mobileSelect('L')">
+	        		<img class="imgheader" src="/assets/template.jpg"/>
+	        		<img class="left notstamp" ng-show="leftNot" src="/assets/not_stamp.png"/>
+	        		<span id="leftTitle" style="font-size: 9vw">{{ leftTitle }}</span>
+	      		</div>
+	      		<div class="mobile onion row" ng-click="this.mobileSelect('R')">
+	        		<img class="bottomHeader" src="/assets/template_bottom.jpg"/>
+	        		<img class="right notstamp" ng-show="rightNot" src="/assets/not_stamp.png"/>
+	        		<span id="rightTitle" style="font-size: 9vw">{{ rightTitle }}</span>
+	    		</div>
+	    		<span id="next" ng-click="this.mobileNext()"></span>
+	  		</div>
+		</div>
+		<div ng-show="popupBox" class="modal" tabindex="-1" role="dialog" style="display:block">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title">{{ popupTitle }}</h5>
+			      </div>
+			      <div class="modal-body">
+			        <p>{{ popupContent1 }}<br>
+			        	{{ popupContent2 }}<br>
+			        	{{ popupContent3 }}<br>
+			        	{{ popupContent4 }}<br></p>
+			      </div>
+			      <div class="modal-footer">
+        			<button type="button" ng-click="closePopup()" class="btn btn-primary">{{ popupButton }}</button>
+        		</div>
+			    </div>
+			  </div>
+			</div>
+	</body>
+</html>
